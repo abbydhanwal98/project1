@@ -7,16 +7,27 @@ import { FormsModule } from '@angular/forms';
 import {ServerComponent} from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import {RouterModule,Routes} from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes:Routes=[
-{path:'servers',component:ServersComponent}
+{path:'servers',component:ServersComponent},
+{path:'dashboard',component:DashboardComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    RightsidebarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
