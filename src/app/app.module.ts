@@ -12,10 +12,13 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientsComponent } from './clients/clients.component';
+import {DataTablesModule} from 'angular-datatables';
 
 const routes:Routes=[
 {path:'servers',component:ServersComponent},
 {path:'dashboard',component:DashboardComponent},
+{path:'clients',component:ClientsComponent},
 ];
 
 @NgModule({
@@ -27,12 +30,14 @@ const routes:Routes=[
     FooterComponent,
     SidebarComponent,
     RightsidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DataTablesModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
