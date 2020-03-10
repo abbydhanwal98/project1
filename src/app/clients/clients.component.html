@@ -1,0 +1,133 @@
+<div class="row">
+   <div class="col-md-12">
+      <div class="card">
+        <div id="staff-col" class="top-header-row">
+               <button id="addButton" type="button" class="btn btn-primary addstaff" data-toggle="modal" data-target="#responsive-modal">Add New Client</button>
+       </div>
+         <div class="table-responsive">
+            <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+			  <thead>
+			    <tr>
+			      <th>Name</th>
+			      <th>Email</th>
+			      <th>Website</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			   <tr *ngFor="let group of data">
+			         <td>{{group.name}}</td>
+			         <td>{{group.email}}</td>
+			         <td>{{group.website}}</td>
+			     </tr>
+			  </tbody>
+			</table>
+         </div>
+      </div>
+   </div>
+</div>
+<div id="responsive-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+   <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Add Clients Here</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         </div>
+         <form id="form" autocomplete="off" action="#" method="post" enctype="multipart/form-data" >
+            @csrf
+            <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <input type="text"  class="form-control" name="name" placeholder="Full Name">
+                        <span class="error" role="alert" ></span>
+                        <span class="invalid-feedback" role="alert" id="name">
+                        </span>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <input type="text" class="form-control" name="email" placeholder="Email" >
+                        <span class="invalid-feedback" role="alert" id="email">
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <input type="password" class="form-control" name="password" autocomplete="new-password" placeholder="Password">
+                        <span class="error" role="alert" ></span>
+                        <span class="invalid-feedback" role="alert" id="password">
+                        </span>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <span class="invalid-feedback" role="alert" id="branch">
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6" style="display:none">
+                     <div class="form-group">                       
+                        <span class="invalid-feedback" role="alert" id="manager">
+                        </span>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                      <select class="form-control" name="designation">
+                      
+                           <option data-level="" value="">Select Designation</option>
+                      
+                      </select>
+                             
+                        <span class="invalid-feedback" role="alert"  id="designation">
+                        </span>
+                     </div>
+                  </div>
+                  <!--col-md-6-->
+               </div>
+               <div class="row" id="email-notification-radio-buttons">
+                 <div class="col-md-12">
+                   <div class="form-group">
+                           <div class="demo-radio">
+                              <label for="similar_job_id" class="control-label d-inline" style="margin-bottom: 0px;"><span>Email notifications?</span></label>
+                              <span class="radio-btn"><input class="is_job_similar_input" name="notify_email" type="radio" id="radio_1" value="1" checked="">
+                              <label for="radio_1"><em>Yes</em></label>
+                              </span>
+                              <span class="radio-btn"><input class="is_job_similar_input" name="notify_email" type="radio" id="radio_2" value="0" >
+                              <label for="radio_2"><em>No</em></label> 
+                              </span>
+                           </div>
+                        </div>
+                 </div>
+               </div>
+               
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <input type="file" class="form-control" name="image" id="image_upload" placeholder="Photo">
+                        <span class="invalid-feedback" role="alert" id="image">
+                        </span>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <img class="img-circle" width="100px" src="" alt="" id="image_show">
+                  </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+            <div class="modal-footer">
+               <div class="modal-btn-list"><button type="submit" class="btn btn-danger waves-effect waves-light">Save</button>
+                  <button type="button" id="closeModal" class="btn btn-default waves-effect closeModal"data-dismiss="modal">Close</button>
+                </div>
+               </div>
+               </div>
+            </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
