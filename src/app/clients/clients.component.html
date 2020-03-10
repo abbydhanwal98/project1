@@ -14,11 +14,11 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			   <tr *ngFor="let group of data">
-			         <td>{{group.name}}</td>
-			         <td>{{group.email}}</td>
-			         <td>{{group.website}}</td>
-			     </tr>
+			   <tr *ngFor="let person of persons">
+                <td>{{ person.id }}</td>
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+            </tr>
 			  </tbody>
 			</table>
          </div>

@@ -8,15 +8,14 @@ import {ServerComponent} from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import {RouterModule,Routes} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-<<<<<<< HEAD
-=======
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientsComponent } from './clients/clients.component';
 import {DataTablesModule} from 'angular-datatables';
->>>>>>> a848f2cb40f4403a93f174d97318970a4bdc6d8e
+
+import { HttpClient,HttpClientModule, HttpResponse } from '@angular/common/http';
 
 const routes:Routes=[
 {path:'servers',component:ServersComponent},
@@ -41,9 +40,10 @@ const routes:Routes=[
     AppRoutingModule,
     FormsModule,
     DataTablesModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
